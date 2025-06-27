@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://1q1rf05tb0ne"]
+
+[ext_resource type="AudioStream" uid="uid://ch3o1s1tcl67t" path="res://assets/audio/Pop.mp3" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://b52gwgrw3wb5c" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="AudioStream" uid="uid://b1p3805quywoy" path="res://assets/audio/miau-_-.mp3" id="3_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://bof4quos8mrdr" path="res://assets/audio/miau'-'.mp3" id="4_tefeu"]
+[ext_resource type="AudioStream" uid="uid://dpev1ds42momm" path="res://assets/audio/miauxp.mp3" id="5_o6xl0"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_sugp2")
+
+[node name="balloon_timer" type="Timer" parent="."]
+wait_time = 0.574
+autostart = true
+
+[node name="pop_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_o5qli")
+
+[node name="miau_0" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tbgi4")
+
+[node name="miau_1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tefeu")
+
+[node name="miau_2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o6xl0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 452.0
+offset_bottom = 691.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+shortcut_context = NodePath("../..")
+color = Color(0.134203, 0.134347, 0.24, 1)

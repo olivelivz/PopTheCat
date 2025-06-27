@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://csxsvbo5r7tut"]
+
+[ext_resource type="Script" uid="uid://bl02lcrji3jg" path="res://scripts/credits.gd" id="1_2ckv8"]
+[ext_resource type="FontFile" uid="uid://cxuip1dnvtlvn" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_0ctdu"]
+
+[sub_resource type="Theme" id="Theme_aq4fm"]
+
+[sub_resource type="Theme" id="Theme_qf0yk"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ckv8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 528.0
+offset_bottom = 728.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.966
+anchor_bottom = 0.533
+offset_left = -8.0
+offset_top = -64.0
+offset_right = 64.048
+offset_bottom = 288.24
+theme = SubResource("Theme_aq4fm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 31
+text = "Arte - Érica 
+Arte - Luiza
+Gamedesign - Livs
+Miau - Lala"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 464.0
+offset_right = 344.0
+offset_bottom = 528.0
+theme = SubResource("Theme_qf0yk")
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 31
+text = "Voltar"
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

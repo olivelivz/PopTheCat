@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://j8kfooi6x7j6"]
+
+[ext_resource type="Script" uid="uid://cvet3qa0cglj7" path="res://scripts/gameover.gd" id="1_dy3ie"]
+[ext_resource type="FontFile" uid="uid://cxuip1dnvtlvn" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_2mkfd"]
+
+[sub_resource type="Theme" id="Theme_h8i2o"]
+default_font = ExtResource("2_2mkfd")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_mt7yr"]
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dy3ie")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 299.0
+offset_right = 442.0
+offset_bottom = 452.0
+theme = SubResource("Theme_h8i2o")
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 420.0
+offset_right = 359.0
+offset_bottom = 470.0
+theme = SubResource("Theme_mt7yr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2mkfd")
+theme_override_font_sizes/font_size = 31
+text = "Restart"

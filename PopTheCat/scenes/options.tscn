@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://xhws78wysi15"]
+
+[ext_resource type="Script" uid="uid://bn7vyuxc8107u" path="res://scripts/options.gd" id="1_c2u1v"]
+[ext_resource type="FontFile" uid="uid://cxuip1dnvtlvn" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_2iy26"]
+[ext_resource type="AudioStream" uid="uid://dh6o6i5yl4dyr" path="res://assets/audio/clickeffect.mp3" id="2_yjkok"]
+
+[sub_resource type="Theme" id="Theme_kv8mn"]
+
+[sub_resource type="Theme" id="Theme_1sggn"]
+
+[node name="options" type="Node2D"]
+script = ExtResource("1_c2u1v")
+
+[node name="music_volume" type="Button" parent="."]
+offset_left = 273.0
+offset_top = 256.0
+offset_right = 475.0
+offset_bottom = 320.0
+text = "Música
+(em andamento)"
+
+[node name="effects_volume" type="Button" parent="."]
+offset_top = 256.0
+offset_right = 213.0
+offset_bottom = 320.0
+text = "Efeitos
+(em andamento)"
+
+[node name="quit_for_menu" type="Button" parent="."]
+offset_left = 112.0
+offset_top = 376.0
+offset_right = 384.0
+offset_bottom = 450.0
+theme = SubResource("Theme_kv8mn")
+theme_override_fonts/font = ExtResource("2_2iy26")
+theme_override_font_sizes/font_size = 31
+text = "Voltar ao menu"
+
+[node name="credits" type="Button" parent="."]
+offset_left = 144.0
+offset_top = 512.0
+offset_right = 336.0
+offset_bottom = 576.0
+theme = SubResource("Theme_1sggn")
+theme_override_fonts/font = ExtResource("2_2iy26")
+theme_override_font_sizes/font_size = 25
+text = "Créditos"
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yjkok")
+
+[connection signal="mouse_entered" from="quit_for_menu" to="." method="_on_quit_for_menu_mouse_entered"]
+[connection signal="pressed" from="quit_for_menu" to="." method="_on_quit_for_menu_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://bubgxina2clwf"]
+
+[ext_resource type="Script" uid="uid://cw1j1gn8v5qb7" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cgsx1svas6s5g" path="res://assets/sprites/main_menuback.webp" id="2_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://dh6o6i5yl4dyr" path="res://assets/audio/clickeffect.mp3" id="2_ekxnf"]
+[ext_resource type="FontFile" uid="uid://cxuip1dnvtlvn" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://bh5u0bcqn8pwq" path="res://assets/sprites/icon_trans.png" id="5_8ln24"]
+
+[sub_resource type="Theme" id="Theme_8ln24"]
+
+[sub_resource type="Theme" id="Theme_wu84c"]
+default_font = ExtResource("3_8ln24")
+default_font_size = 31
+
+[sub_resource type="Theme" id="Theme_rtw2f"]
+default_font = ExtResource("3_8ln24")
+default_font_size = 31
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_l6cm7")
+
+[node name="buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="Sprite2D" parent="buttons"]
+position = Vector2(241.5, 356)
+scale = Vector2(0.573317, 0.590461)
+texture = ExtResource("2_bqqt6")
+
+[node name="start" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 256.0
+offset_right = 328.0
+offset_bottom = 328.0
+theme = SubResource("Theme_8ln24")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 31
+text = "Jogar"
+
+[node name="options" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 384.0
+offset_right = 328.0
+offset_bottom = 448.0
+theme = SubResource("Theme_wu84c")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Opções"
+
+[node name="quit" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 496.0
+offset_right = 328.0
+offset_bottom = 560.0
+theme = SubResource("Theme_rtw2f")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Sair"
+
+[node name="click_buttom" type="AudioStreamPlayer2D" parent="buttons"]
+stream = ExtResource("2_ekxnf")
+
+[node name="Icon" type="Sprite2D" parent="buttons"]
+position = Vector2(240, 128)
+scale = Vector2(0.0879688, 0.0941406)
+texture = ExtResource("5_8ln24")
+
+[connection signal="mouse_entered" from="buttons/start" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="buttons/start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="buttons/options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="buttons/options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="buttons/quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="buttons/quit" to="." method="_on_quit_pressed"]
